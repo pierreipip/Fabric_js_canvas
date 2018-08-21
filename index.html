@@ -1,0 +1,788 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MCZ ID maker</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Starting SEO Tags -->
+    <meta name="description" content="Build your custom MCZ ID for your MavicPro DJI, Carbon Fibre Props">
+<meta name="keywords" content="tattoo font maker, tattoo builder">
+<meta name="robots" content="index, follow">
+    <!-- Ending SEO Tags -->
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Marvel|Oswald:300|Roboto">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<link rel="stylesheet" type="text/css" href="./css/style.css?v=035514">
+    <link rel="stylesheet" type="text/css" href="./fonts/fonts.css?v=035514">
+    <link rel="stylesheet" type="text/css" href="./fonts/icon-fonts.css?v=035514">
+	<link rel="stylesheet" type="text/css" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
+	<link rel="stylesheet" type="text/css" href="./css/simple-switch.min.css">
+	<link rel="stylesheet" type="text/css" href="./css/jquery.minicolors.css">
+	<link rel="stylesheet" type="text/css" href='./css/powerange.min.css' />
+	<link rel="stylesheet" type="text/css" href='./css/jquery.minimalect.min.css' />
+	<link rel="stylesheet" type="text/css" href='./css/magnific-popup.css' />
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.1.0/sweetalert2.min.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="./image/apple-touch-icon.png">
+    <link rel="icon" type="./image/png" href="./image/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="./image/png" href="./image/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="./js/manifest.json">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="theme-color" content="#ffffff">
+		<script type="application/ld+json">
+			{
+		    "@context": "http://schema.org",
+		    "@type": "WebSite",
+		    "url": "http://www.luxzlab.com/mczid/index.html"
+			}
+		</script>
+  </head>
+  <body>
+    <div class="main-banner">
+      <div class="layer">
+        <div class="container">
+          <div class="banner-con">
+                          <h1>Build Your MCZ ID</h1>
+                      </div>
+        </div>
+              </div>
+    </div>
+<div class="container builder-start">
+
+<div class="container">
+<div class="row">
+	  <div class="col-md-12 col-xs-12 builder-content">
+
+		<div id="canvas-wrapper">
+		  <canvas id="canvas"></canvas>
+		</div>
+
+		<div class="divide-10"></div>
+
+	  </div>
+	</div>
+</div>
+
+<div class="container">
+	<div class="row">  
+	
+	<div class="col-md-1 col-xs-1"></div>
+	<div class="col-md-5 col-xs-5" spellcheck="false" style="border-right:1px solid #efefef">
+	<div class="divide-10"></div>
+
+		  <button type="button" id="add_image" class="btn btn-default flat-black" style="width:49%">Add Image</button>
+		  <button type="button" id="add_text" class="btn btn-default flat-black" style="width:49%;float:right">Add Text</button>
+		  <input type="file" id="fileLoader" name="files" title="Load File" style="display:none" />
+
+		  <div class="divide-10"></div>
+		  <div class="divide-10"></div>
+		  
+		  <div class="btn-group btn-group-sm">
+			<button class="btn btn-default btn-sm" title="Bring object forward" id="bring_forward"><i class="lnr lnr-enter-down"></i></button>
+			<button class="btn btn-default btn-sm" title="Push object backward" id="bring_backward"><i class="lnr lnr-exit-up"></i></button>
+			<button class="btn btn-default btn-sm" title="Remove selected object" id="remove_btn"><i class="lnr lnr-trash"></i></button>
+			<button class="btn btn-default" title="Flip Item" id="flip_item">
+			  <span class="lnr lnr-sync"></span>
+			</button>
+		  </div>
+		  
+		  <div class="divide-10"></div>
+		  <div class="divide-10"></div>
+		  
+		  <div class="images-container">
+			<legend>Final Step: Add Propeller Shape on top</legend>
+			  <ul class="images-list">
+				<li><img src="./image/propeller_shape.png"></li>
+			  </ul>
+		  </div>
+		  
+		  <div class="divide-10"></div>
+		  <div class="divide-10"></div>
+	</div>
+	
+	  <div class="col-md-5 col-xs-5" spellcheck="false" style="border-right:1px solid #efefef">
+	  
+		<div class="left-controller toolbox">
+		  <legend><h3>Input Your Own Text</h3></legend>
+
+		  <div class="form-group edit-text-wrapper">
+			<textarea id="logo_text" class="form-control" placeholder="Type your text here..." maxlength="250" rows="3"></textarea>
+		  </div>
+		  <div class="btn-group btn-group-sm position-btn-group" data-toggle="buttons">
+			<button class="btn btn-default" title="Left" id="left">
+			  <span class="lnr lnr-text-align-left"></span>
+			</button>
+			<button class="btn btn-default active" title="Center" id="center">
+			  <span class="lnr lnr-text-align-center"></span>
+			</button>
+			<button class="btn btn-default" title="Right" id="right">
+			  <span class="lnr lnr-text-align-right"></span>
+			</button>
+		  </div>
+		  
+		  <div class="btn-group btn-group-sm">
+			<button class="btn btn-default fc-btn" title="ForeColor" id="fore_color" data-toggle="dropdown"><span id="fcbox">&nbsp;</span> <span class="glyphicon"></span><span class="caret"></span></button>
+			<ul class="dropdown-menu" role="menu">
+			  <input type="hidden" class="fore_color">
+			</ul>
+		  </div>
+		  <div class="btn-group btn-group-sm">
+			<button class="btn btn-default bk-btn" title="Back Color" data-toggle="dropdown"><span id="bkbox">&nbsp;</span> <span class="glyphicon"></span><span class="caret"></span></button>
+		   <ul class="dropdown-menu" role="menu">
+			 <input type="hidden" class="back_color">
+		   </ul>
+		  </div>
+		  <div class="btn-group btn-group-sm">
+			<button class="btn btn-default" title="Image" data-toggle="dropdown"><i class="lnr lnr-picture"></i> <span class="glyphicon"></span><span class="caret"></span></button>
+			 <ul class="dropdown-menu images-icon-wrapper" role="menu" style="width:200px;max-height:300px">
+			  <div id="images-container" class="btn-group" data-toggle="buttons">
+	  <label class="btn btn-default ">
+		<input type="radio" name="radio-images" value="fa-anchor"><i class="fa fa-anchor fa-lg"></i>
+	  </label>
+	  <label class="btn btn-default ">
+		<input type="radio" name="radio-images" value="fa-apple"><i class="fa fa-apple fa-lg"></i>
+	  </label>
+	  <label class="btn btn-default ">
+		<input type="radio" name="radio-images" value="fa-arrow-left"><i class="fa fa-arrow-left fa-lg"></i>
+	  </label>
+	  <label class="btn btn-default ">
+		<input type="radio" name="radio-images" value="fa-arrow-up"><i class="fa fa-arrow-up fa-lg"></i>
+	  </label>
+	  <label class="btn btn-default ">
+		<input type="radio" name="radio-images" value="fa-arrow-right"><i class="fa fa-arrow-right fa-lg"></i>
+	  </label>
+	  <label class="btn btn-default ">
+		<input type="radio" name="radio-images" value="fa-arrow-down"><i class="fa fa-arrow-down fa-lg"></i>
+	  </label>
+	  <label class="btn btn-default ">
+		<input type="radio" name="radio-images" value="fa-smile-o"><i class="fa fa-smile-o fa-lg"></i>
+	  </label>
+	  <label class="btn btn-default ">
+		<input type="radio" name="radio-images" value="fa-asterisk"><i class="fa fa-asterisk fa-lg"></i>
+	  </label>
+	  <label class="btn btn-default ">
+		<input type="radio" name="radio-images" value="fa-balance-scale"><i class="fa fa-balance-scale fa-lg"></i>
+	  </label>
+	  <label class="btn btn-default ">
+		<input type="radio" name="radio-images" value="fa-ban"><i class="fa fa-ban fa-lg"></i>
+	  </label>
+	  <label class="btn btn-default ">
+		<input type="radio" name="radio-images" value="fa-barcode"><i class="fa fa-barcode fa-lg"></i>
+	  </label>
+	  <label class="btn btn-default ">
+		<input type="radio" name="radio-images" value="fa-beer"><i class="fa fa-beer fa-lg"></i>
+	  </label>
+	  <label class="btn btn-default ">
+		<input type="radio" name="radio-images" value="fa-bell-o"><i class="fa fa-bell-o fa-lg"></i>
+	  </label>
+	  <label class="btn btn-default ">
+		<input type="radio" name="radio-images" value="fa-bicycle"><i class="fa fa-bicycle fa-lg"></i>
+	  </label>
+	  <label class="btn btn-default ">
+		<input type="radio" name="radio-images" value="fa-birthday-cake"><i class="fa fa-birthday-cake fa-lg"></i>
+	  </label>
+	  <label class="btn btn-default ">
+		<input type="radio" name="radio-images" value="fa-bitcoin"><i class="fa fa-bitcoin fa-lg"></i>
+	  </label>
+	  <label class="btn btn-default ">
+		<input type="radio" name="radio-images" value="fa-bolt"><i class="fa fa-bolt fa-lg"></i>
+	  </label>
+	  <label class="btn btn-default ">
+		<input type="radio" name="radio-images" value="fa-bomb"><i class="fa fa-bomb fa-lg"></i>
+	  </label>
+	  <label class="btn btn-default ">
+		<input type="radio" name="radio-images" value="fa-bullhorn"><i class="fa fa-bullhorn fa-lg"></i>
+	  </label>
+	  <label class="btn btn-default ">
+		<input type="radio" name="radio-images" value="fa-bullseye"><i class="fa fa-bullseye fa-lg"></i>
+	  </label>
+	  <label class="btn btn-default ">
+		<input type="radio" name="radio-images" value="fa-calendar-o"><i class="fa fa-calendar-o fa-lg"></i>
+	  </label>
+	  <label class="btn btn-default ">
+		<input type="radio" name="radio-images" value="fa-cc"><i class="fa fa-cc fa-lg"></i>
+	  </label>
+	  <label class="btn btn-default ">
+		<input type="radio" name="radio-images" value="fa-circle-o"><i class="fa fa-circle-o fa-lg"></i>
+	  </label>
+	  <label class="btn btn-default ">
+		<input type="radio" name="radio-images" value="fa-clock-o"><i class="fa fa-clock-o fa-lg"></i>
+	  </label>
+	  <label class="btn btn-default ">
+		<input type="radio" name="radio-images" value="fa-cloud"><i class="fa fa-cloud fa-lg"></i>
+	  </label>
+	  <label class="btn btn-default ">
+		<input type="radio" name="radio-images" value="fa-code"><i class="fa fa-code fa-lg"></i>
+	  </label>
+	  <label class="btn btn-default ">
+		<input type="radio" name="radio-images" value="fa-coffee"><i class="fa fa-coffee fa-lg"></i>
+	  </label>
+	  <label class="btn btn-default ">
+		<input type="radio" name="radio-images" value="fa-cog"><i class="fa fa-cog fa-lg"></i>
+	  </label>
+	  <label class="btn btn-default ">
+		<input type="radio" name="radio-images" value="fa-compass"><i class="fa fa-compass fa-lg"></i>
+	  </label>
+	  <label class="btn btn-default ">
+		<input type="radio" name="radio-images" value="fa-copyright"><i class="fa fa-copyright fa-lg"></i>
+	  </label>
+	  <label class="btn btn-default ">
+		<input type="radio" name="radio-images" value="fa-crosshairs"><i class="fa fa-crosshairs fa-lg"></i>
+	  </label>
+	  <label class="btn btn-default ">
+		<input type="radio" name="radio-images" value="fa-cube"><i class="fa fa-cube fa-lg"></i>
+	  </label>
+	  <label class="btn btn-default ">
+		<input type="radio" name="radio-images" value="fa-database"><i class="fa fa-database fa-lg"></i>
+	  </label>
+	  <label class="btn btn-default ">
+		<input type="radio" name="radio-images" value="fa-diamond"><i class="fa fa-diamond fa-lg"></i>
+	  </label>
+	  <label class="btn btn-default ">
+		<input type="radio" name="radio-images" value="fa-eye"><i class="fa fa-eye fa-lg"></i>
+	  </label>
+	  <label class="btn btn-default ">
+		<input type="radio" name="radio-images" value="fa-exclamation-triangle"><i class="fa fa-exclamation-triangle fa-lg"></i>
+	  </label>
+	  <label class="btn btn-default ">
+		<input type="radio" name="radio-images" value="fa-exclamation"><i class="fa fa-exclamation fa-lg"></i>
+	  </label>
+	  <label class="btn btn-default ">
+		<input type="radio" name="radio-images" value="fa-fire"><i class="fa fa-fire fa-lg"></i>
+	  </label>
+	  <label class="btn btn-default ">
+		<input type="radio" name="radio-images" value="fa-futbol-o"><i class="fa fa-futbol-o fa-lg"></i>
+	  </label>
+	  <label class="btn btn-default ">
+		<input type="radio" name="radio-images" value="fa-gear"><i class="fa fa-gear fa-lg"></i>
+	  </label>
+	  <label class="btn btn-default ">
+		<input type="radio" name="radio-images" value="fa-gears"><i class="fa fa-gears fa-lg"></i>
+	  </label>
+	  <label class="btn btn-default ">
+		<input type="radio" name="radio-images" value="fa-globe"><i class="fa fa-globe fa-lg"></i>
+	  </label>
+	  <label class="btn btn-default ">
+		<input type="radio" name="radio-images" value="fa-graduation-cap"><i class="fa fa-graduation-cap fa-lg"></i>
+	  </label>
+	  <label class="btn btn-default ">
+		<input type="radio" name="radio-images" value="fa-headphones"><i class="fa fa-headphones fa-lg"></i>
+	  </label>
+	  <label class="btn btn-default ">
+		<input type="radio" name="radio-images" value="fa-heart-o"><i class="fa fa-heart-o fa-lg"></i>
+	  </label>
+	  <label class="btn btn-default ">
+		<input type="radio" name="radio-images" value="fa-heart"><i class="fa fa-heart fa-lg"></i>
+	  </label>
+	  <label class="btn btn-default ">
+		<input type="radio" name="radio-images" value="fa-heartbeat"><i class="fa fa-heartbeat fa-lg"></i>
+	  </label>
+	  <label class="btn btn-default ">
+		<input type="radio" name="radio-images" value="fa-home"><i class="fa fa-home fa-lg"></i>
+	  </label>
+	  <label class="btn btn-default ">
+		<input type="radio" name="radio-images" value="fa-key"><i class="fa fa-key fa-lg"></i>
+	  </label>
+	  <label class="btn btn-default ">
+		<input type="radio" name="radio-images" value="fa-laptop"><i class="fa fa-laptop fa-lg"></i>
+	  </label>
+	  <label class="btn btn-default ">
+		<input type="radio" name="radio-images" value="fa-leaf"><i class="fa fa-leaf fa-lg"></i>
+	  </label>
+	  <label class="btn btn-default ">
+		<input type="radio" name="radio-images" value="fa-legal"><i class="fa fa-legal fa-lg"></i>
+	  </label>
+	  <label class="btn btn-default ">
+		<input type="radio" name="radio-images" value="fa-life-ring"><i class="fa fa-life-ring fa-lg"></i>
+	  </label>
+	  <label class="btn btn-default ">
+		<input type="radio" name="radio-images" value="fa-lightbulb-o"><i class="fa fa-lightbulb-o fa-lg"></i>
+	  </label>
+	  <label class="btn btn-default ">
+		<input type="radio" name="radio-images" value="fa-lock"><i class="fa fa-lock fa-lg"></i>
+	  </label>
+	  <label class="btn btn-default ">
+		<input type="radio" name="radio-images" value="fa-magic"><i class="fa fa-magic fa-lg"></i>
+	  </label>
+	  <label class="btn btn-default ">
+		<input type="radio" name="radio-images" value="fa-mars-double"><i class="fa fa-mars-double fa-lg"></i>
+	  </label>
+	  <label class="btn btn-default ">
+		<input type="radio" name="radio-images" value="fa-mars"><i class="fa fa-mars fa-lg"></i>
+	  </label>
+	  <label class="btn btn-default ">
+		<input type="radio" name="radio-images" value="fa-mercury"><i class="fa fa-mercury fa-lg"></i>
+	  </label>
+	  <label class="btn btn-default ">
+		<input type="radio" name="radio-images" value="fa-moon-o"><i class="fa fa-moon-o fa-lg"></i>
+	  </label>
+	  <label class="btn btn-default ">
+		<input type="radio" name="radio-images" value="fa-music"><i class="fa fa-music fa-lg"></i>
+	  </label>
+	  <label class="btn btn-default ">
+		<input type="radio" name="radio-images" value="fa-paper-plane"><i class="fa fa-paper-plane fa-lg"></i>
+	  </label>
+	  <label class="btn btn-default ">
+		<input type="radio" name="radio-images" value="fa-paw"><i class="fa fa-paw fa-lg"></i>
+	  </label>
+	  <label class="btn btn-default ">
+		<input type="radio" name="radio-images" value="fa-pie-chart"><i class="fa fa-pie-chart fa-lg"></i>
+	  </label>
+	  <label class="btn btn-default ">
+		<input type="radio" name="radio-images" value="fa-plug"><i class="fa fa-plug fa-lg"></i>
+	  </label>
+	  <label class="btn btn-default ">
+		<input type="radio" name="radio-images" value="fa-puzzle-piece"><i class="fa fa-puzzle-piece fa-lg"></i>
+	  </label>
+	  <label class="btn btn-default ">
+		<input type="radio" name="radio-images" value="fa-qrcode"><i class="fa fa-qrcode fa-lg"></i>
+	  </label>
+	  <label class="btn btn-default ">
+		<input type="radio" name="radio-images" value="fa-recycle"><i class="fa fa-recycle fa-lg"></i>
+	  </label>
+	  <label class="btn btn-default ">
+		<input type="radio" name="radio-images" value="fa-refresh"><i class="fa fa-refresh fa-lg"></i>
+	  </label>
+	  <label class="btn btn-default ">
+		<input type="radio" name="radio-images" value="fa-square-o"><i class="fa fa-square-o fa-lg"></i>
+	  </label>
+	  <label class="btn btn-default ">
+		<input type="radio" name="radio-images" value="fa-star-o"><i class="fa fa-star-o fa-lg"></i>
+	  </label>
+	  <label class="btn btn-default ">
+		<input type="radio" name="radio-images" value="fa-star"><i class="fa fa-star fa-lg"></i>
+	  </label>
+	  <label class="btn btn-default ">
+		<input type="radio" name="radio-images" value="fa-sun-o"><i class="fa fa-sun-o fa-lg"></i>
+	  </label>
+	  <label class="btn btn-default ">
+		<input type="radio" name="radio-images" value="fa-tachometer"><i class="fa fa-tachometer fa-lg"></i>
+	  </label>
+	  <label class="btn btn-default ">
+		<input type="radio" name="radio-images" value="fa-trash"><i class="fa fa-trash fa-lg"></i>
+	  </label>
+	  <label class="btn btn-default ">
+		<input type="radio" name="radio-images" value="fa-trophy"><i class="fa fa-trophy fa-lg"></i>
+	  </label>
+	  <label class="btn btn-default ">
+		<input type="radio" name="radio-images" value="fa-university"><i class="fa fa-university fa-lg"></i>
+	  </label>
+	  <label class="btn btn-default ">
+		<input type="radio" name="radio-images" value="fa-user-md"><i class="fa fa-user-md fa-lg"></i>
+	  </label>
+	  <label class="btn btn-default ">
+		<input type="radio" name="radio-images" value="fa-user-secret"><i class="fa fa-user-secret fa-lg"></i>
+	  </label>
+	  <label class="btn btn-default ">
+		<input type="radio" name="radio-images" value="fa-venus-double"><i class="fa fa-venus-double fa-lg"></i>
+	  </label>
+	  <label class="btn btn-default ">
+		<input type="radio" name="radio-images" value="fa-venus-mars"><i class="fa fa-venus-mars fa-lg"></i>
+	  </label>
+	  <label class="btn btn-default ">
+		<input type="radio" name="radio-images" value="fa-venus"><i class="fa fa-venus fa-lg"></i>
+	  </label>
+	  <label class="btn btn-default ">
+		<input type="radio" name="radio-images" value="fa-wrench"><i class="fa fa-wrench fa-lg"></i>
+	  </label>
+	  <label class="btn btn-default ">
+		<input type="radio" name="radio-images" value="fa-wheelchair"><i class="fa fa-wheelchair fa-lg"></i>
+	  </label>
+	</div>         </ul>
+		  </div>
+
+		  <div class="btn-group btn-group-sm pull-right">
+			<button class="btn btn-default active" title="Edit Text" id="edit">
+			  <span class="lnr lnr-pencil"></span>
+			</button>
+			<button class="btn btn-default" title="Bold" id="bold">
+			  <span class="lnr lnr-bold"></span>
+			</button>
+			<button class="btn btn-default" title="Italic" id="italic">
+			  <span class="lnr lnr-italic"></span>
+			</button>
+		  </div>
+
+		  <div class="divide-10"></div>
+
+
+
+
+		  <div class="divide-10"></div>
+
+						<select id="font_family">
+						  <option value="Achafexp">Achafexp</option>
+						  <option value="Action_Is">Action Is</option>
+						  <option value="AdineKirnberg_Alternate">AdineKirnberg Alternate</option>
+						  <option value="Aguafina_Script">Aguafina Script</option>
+						  <option value="Allura">Allura</option>
+						  <option value="Alpha54">Alpha54</option>
+						  <option value="Anpad_Script">Anpad Script</option>
+						  <option value="Anther_Clo">Anther Clo</option>
+						  <option value="Arizonia">Arizonia</option>
+						  <option value="Barb_Ink">Barb Ink</option>
+						  <option value="Beech">Beech</option>
+						  <option value="Beyond_Wonderland">Beyond Wonderland</option>
+						  <option value="Bilbo">Bilbo</option>
+						  <option value="Bilbo_Swash_Caps">Bilbo Swash Caps</option>
+						  <option value="Black_Chancery">Black Chancery</option>
+						  <option value="Black_Jack">Black Jack</option>
+						  <option value="Black_Rose">Black Rose</option>
+						  <option value="Blackletter">Blackletter</option>
+						  <option value="Brock_Script">Brock Script</option>
+						  <option value="Bullpen">Bullpen</option>
+						  <option value="Burnstown_Dam">Burnstown Dam</option>
+						  <option value="Calligraffiti">Calligraffiti</option>
+						  <option value="Carolingia_Bigfoot">Carolingia Bigfoot</option>
+						  <option value="Carrington">Carrington</option>
+						  <option value="Caslon_Calligraphic">Caslon Calligraphic</option>
+						  <option value="Casper">Casper</option>
+						  <option value="Champagne">Champagne</option>
+						  <option value="Chopin_Script">Chopin Script</option>
+						  <option value="Chunkfive">Chunkfive</option>
+						  <option value="Claw">Claw</option>
+						  <option value="Condiment">Condiment</option>
+						  <option value="Cowboy_Hippie_Pro">Cowboy Hippie Pro</option>
+						  <option value="Dancing_Script_Regular">Dancing Script Regular</option>
+						  <option value="Daniel_Black">Daniel Black</option>
+						  <option value="Dark_Garden_MK">Dark Garden MK</option>
+						  <option value="Deftone_Stylus">Deftone Stylus</option>
+						  <option value="Delicious_Roman">Delicious Roman</option>
+						  <option value="Desyrel">Desyrel</option>
+						  <option value="Deutsch_Gothic">Deutsch Gothic</option>
+						  <option value="Devroye">Devroye</option>
+						  <option value="Die_Nasty">Die Nasty</option>
+						  <option value="Digital_Dream">Digital Dream</option>
+						  <option value="Distant_Galaxy">Distant Galaxy</option>
+						  <option value="District_Thin">District Thin</option>
+						  <option value="Dobkin_Script">Dobkin Script</option>
+						  <option value="Dominatrix">Dominatrix</option>
+						  <option value="Droid">Droid</option>
+						  <option value="Dubiel_Plain">Dubiel Plain</option>
+						  <option value="Economica">Economica</option>
+						  <option value="Edmunds">Edmunds</option>
+						  <option value="Electroharmonix">Electroharmonix</option>
+						  <option value="Elliot_Six">Elliot Six</option>
+						  <option value="Elvish_Ring (1)">Elvish Ring (1)</option>
+						  <option value="Elvish_Ring">Elvish Ring</option>
+						  <option value="England">England</option>
+						  <option value="Eutemia">Eutemia</option>
+						  <option value="Evilz">Evilz</option>
+						  <option value="FFF_Forward">FFF Forward</option>
+						  <option value="Fancy_Pants">Fancy Pants</option>
+						  <option value="Fascinate">Fascinate</option>
+						  <option value="Fjord_One">Fjord One</option>
+						  <option value="Flaemische_Kanzleischrift">Flaemische Kanzleischrift</option>
+						  <option value="Florante_at_Laura">Florante At Laura</option>
+						  <option value="Flowers_Initials">Flowers Initials</option>
+						  <option value="Flowers_St">Flowers St</option>
+						  <option value="Follow_Your_Dreams">Follow Your Dreams</option>
+						  <option value="Forque">Forque</option>
+						  <option value="Forty_Second_Street">Forty Second Street</option>
+						  <option value="Fotograami">Fotograami</option>
+						  <option value="Freebooter_Script">Freebooter Script</option>
+						  <option value="Friday_13">Friday 13</option>
+						  <option value="GBShinto_Regular">GBShinto Regular</option>
+						  <option value="Gauss_Jordan">Gauss Jordan</option>
+						  <option value="GenzschEtHeyse">GenzschEtHeyse</option>
+						  <option value="Georgia">Georgia</option>
+						  <option value="Gotisch">Gotisch</option>
+						  <option value="Grand_Hotel_Regular">Grand Hotel Regular</option>
+						  <option value="Great_Vibes_Regular">Great Vibes Regular</option>
+						  <option value="Griffin">Griffin</option>
+						  <option value="HD_design">HD Design</option>
+						  <option value="Hamburger_Heaven">Hamburger Heaven</option>
+						  <option value="Haunting_Attraction">Haunting Attraction</option>
+						  <option value="Hawaiiah">Hawaiiah</option>
+						  <option value="Heavy_Data">Heavy Data</option>
+						  <option value="Heidorn_Hill">Heidorn Hill</option>
+						  <option value="Henry_Morgan_Hand">Henry Morgan Hand</option>
+						  <option value="Homoarak">Homoarak</option>
+						  <option value="Husky_Stash">Husky Stash</option>
+						  <option value="Ill_Octo">Ill Octo</option>
+						  <option value="Iron_Maiden">Iron Maiden</option>
+						  <option value="It_Lives_in_the_Swamp">It Lives In The Swamp</option>
+						  <option value="Italianno">Italianno</option>
+						  <option value="Kaushan_Script_Regular">Kaushan Script Regular</option>
+						  <option value="Kingthings_Calligraphica">Kingthings Calligraphica</option>
+						  <option value="Kremlin_Alexander">Kremlin Alexander</option>
+						  <option value="Lobster">Lobster</option>
+						  <option value="Lupus_Blight">Lupus Blight</option>
+						  <option value="Medieval_Scribish">Medieval Scribish</option>
+						  <option value="Metal_Lord">Metal Lord</option>
+						  <option value="Metal_Macabre">Metal Macabre</option>
+						  <option value="Metro_RetroNF">Metro RetroNF</option>
+						  <option value="MiltonianTattoo_Regular">MiltonianTattoo Regular</option>
+						  <option value="Minstrel_Poster">Minstrel Poster</option>
+						  <option value="Montez">Montez</option>
+						  <option value="Mothproof_Script">Mothproof Script</option>
+						  <option value="Mountains_of_Christmas">Mountains Of Christmas</option>
+						  <option value="NewRocker_Regular">NewRocker Regular</option>
+						  <option value="Niconne">Niconne</option>
+						  <option value="Ninja_Turtle">Ninja Turtle</option>
+						  <option value="Note_This">Note This</option>
+						  <option value="Nurkholis">Nurkholis</option>
+						  <option value="Old_School_Tattoo">Old School Tattoo</option>
+						  <option value="Old_Stamper">Old Stamper</option>
+						  <option value="Origami_Mommy">Origami Mommy</option>
+						  <option value="Ostrich">Ostrich</option>
+						  <option value="Outright">Outright</option>
+						  <option value="Pacifico">Pacifico</option>
+						  <option value="Pickled_Pansies">Pickled Pansies</option>
+						  <option value="Pincoyablack">Pincoyablack</option>
+						  <option value="Planet_Benson_2">Planet Benson 2</option>
+						  <option value="Plasma_Drip">Plasma Drip</option>
+						  <option value="Pleasingly_Plump">Pleasingly Plump</option>
+						  <option value="Portcullion">Portcullion</option>
+						  <option value="Powderworks">Powderworks</option>
+						  <option value="Precious">Precious</option>
+						  <option value="Proclamate">Proclamate</option>
+						  <option value="Promocyja">Promocyja</option>
+						  <option value="Pusab">Pusab</option>
+						  <option value="Qikki">Qikki</option>
+						  <option value="Quantico">Quantico</option>
+						  <option value="Quicksand">Quicksand</option>
+						  <option value="Rabiohead">Rabiohead</option>
+						  <option value="Redressed">Redressed</option>
+						  <option value="Replicant">Replicant</option>
+						  <option value="Reswysokr">Reswysokr</option>
+						  <option value="RibeyeMarrow_Regular">RibeyeMarrow Regular</option>
+						  <option value="Ribeye_Regular">Ribeye Regular</option>
+						  <option value="Riky_Vampdator">Riky Vampdator</option>
+						  <option value="Rochester">Rochester</option>
+						  <option value="Rock_Salt">Rock Salt</option>
+						  <option value="Rothenburg_Decorative">Rothenburg Decorative</option>
+						  <option value="Royal_Initial">Royal Initial</option>
+						  <option value="Sail_Regular">Sail Regular</option>
+						  <option value="Samba">Samba</option>
+						  <option value="Sansita">Sansita</option>
+						  <option value="SciFly_Sans">SciFly Sans</option>
+						  <option value="Scratch">Scratch</option>
+						  <option value="Scriptina">Scriptina</option>
+						  <option value="Sentinel">Sentinel</option>
+						  <option value="Sevillana">Sevillana</option>
+						  <option value="Shelley">Shelley</option>
+						  <option value="Showboat">Showboat</option>
+						  <option value="Skittlesn_Beer_NF">Skittlesn Beer NF</option>
+						  <option value="Sloe_Gin_Rickey">Sloe Gin Rickey</option>
+						  <option value="Smiley_Face">Smiley Face</option>
+						  <option value="Smokum">Smokum</option>
+						  <option value="Snickles">Snickles</option>
+						  <option value="Sofadi_One">Sofadi One</option>
+						  <option value="Sofia">Sofia</option>
+						  <option value="Soft_Sugar">Soft Sugar</option>
+						  <option value="Sonsie_One">Sonsie One</option>
+						  <option value="Soul_of_Holitter">Soul Of Holitter</option>
+						  <option value="Spacejunk_XL">Spacejunk XL</option>
+						  <option value="Speakeasy">Speakeasy</option>
+						  <option value="SpeedballNo2NF">SpeedballNo2NF</option>
+						  <option value="Spicy_Rice">Spicy Rice</option>
+						  <option value="Spilt_Ink">Spilt Ink</option>
+						  <option value="Spincy_Cyle">Spincy Cyle</option>
+						  <option value="Sports_World">Sports World</option>
+						  <option value="Stardos_Stencil">Stardos Stencil</option>
+						  <option value="Streetwise_Buddy">Streetwise Buddy</option>
+						  <option value="Tagapagsalaysay">Tagapagsalaysay</option>
+						  <option value="Tangerine_Regular">Tangerine Regular</option>
+						  <option value="Tattoo_Girl">Tattoo Girl</option>
+						  <option value="Team_Spirit">Team Spirit</option>
+						  <option value="Technique">Technique</option>
+						  <option value="Teen">Teen</option>
+						  <option value="Teitheas">Teitheas</option>
+						  <option value="Terylene_Top">Terylene Top</option>
+						  <option value="The_Godfather_v2">The Godfather V2</option>
+						  <option value="Theo_Van_Doesburg">Theo Van Doesburg</option>
+						  <option value="Thiamine">Thiamine</option>
+						  <option value="Together_Again">Together Again</option>
+						  <option value="Transuranium">Transuranium</option>
+						  <option value="Tribal_Garamond">Tribal Garamond</option>
+						  <option value="Tribal_One">Tribal One</option>
+						  <option value="Tribal_Two">Tribal Two</option>
+						  <option value="Tribeca">Tribeca</option>
+						  <option value="UA_Square">UA Square</option>
+						  <option value="UnZialish">UnZialish</option>
+						  <option value="Underworld">Underworld</option>
+						  <option value="Unicorn">Unicorn</option>
+						  <option value="Unispace">Unispace</option>
+						  <option value="Velezodiac">Velezodiac</option>
+						  <option value="Velvenda_Cooler">Velvenda Cooler</option>
+						  <option value="Windsong">Windsong</option>
+						  <option value="ZOEGraphic_Regular">ZOEGraphic Regular</option>
+						  <option value="Zallman_Caps">Zallman Caps</option>
+						  <option value="Zombie_Holocaust">Zombie Holocaust</option>
+						  <option value="Zombified">Zombified</option>
+						  <option value="Zreaks">Zreaks</option>
+						  <option value="csnpwdt_NFI">Csnpwdt NFI</option>
+						  <option value="sybil_green">Sybil Green</option>
+						  <option value="telegrama_raw">Telegrama Raw</option>
+					  </select>
+		  
+		  <div class="divide-10"></div>
+
+		  <label class="edit-label">Font Size</label>
+
+		  <div class="divide-10"></div>
+
+		  <input type="text" value="100" class="font-range">
+
+		  <div class="divide-20"></div>
+
+		  <label class="label-light">Curve:</label> <input type="checkbox" value="1" class="checkbox-toggle" id="curve">
+
+
+			  </div><!-- End of .toolbox -->
+
+		<div class="row curve-text-wrapper hidden">
+		  <div class="row">
+			<div class="col-md-12"><label class="label-light" style="margin:0">Reverse:</label> <input type="checkbox" value="1" class="checkbox-toggle" id="reverse"></div>
+			<div class="col-md-12" style="margin-bottom:10px"><label class="label-light" style="margin: 0px 0px 12px;">Radius:</label> <input type="text" value="100" class="curve-radius"></div>
+			<div class="divide-10"></div>
+			<div class="col-md-12"><label class="label-light" style="margin: 0px 0px 12px;">Spacing:</label> <input type="text" value="100" class="curve-spacing"></div>
+		  </div>
+		</div>
+
+		<div class="col-md-1 col-xs-1"></div>
+	  </div>
+	</div>
+</div>
+
+
+
+  <!-- Social Widgets -->
+  <div class="col-md-7 text-center pull-left">
+    <div class="btn-actio
+	ns">
+      <div class="btn-group">
+        <a href="#save-image" class="btn btn-default btn-lg" data-container="body" data-html="true" data-toggle="popover" data-placement="top" data-content="<a href='#png' class='save-format' onclick='save_png()'>PNG</a>&nbsp;<a href='#jpeg' class='save-format' onclick='save_jpeg()'>JPEG</a>">
+          <span class="lnr lnr-download hidden-xs"></span> Save
+        </a>
+		<!-- &nbsp;<a href='#pdf' class='save-format' onclick='save_pdf()'>PDF</a> -->
+        <a id="print_canvas" href="#print" class="btn btn-default btn-lg">
+          <span class="lnr lnr-printer hidden-xs"></span> Print
+        </a>
+        <a id="reset_canvas" href="#reset-canvas" class="btn btn-default btn-lg">
+          <span class="lnr lnr-sync hidden-xs"></span> Reset
+        </a>
+      </div>
+    </div>
+    <div class="divide-10"></div>
+    <div class="addthis_inline_share_toolbox"></div>
+    <div class="divide-10"></div>
+  </div>
+</div>
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <a class="f_logo" href="http://www.luxzlab.com/">
+              <!-- img alt="Logo Here" src="/assets/images/logo.png" class="img-responsive" / -->
+            </a>
+          </div>
+          <div class="col-md-6">
+            <ul class="footer-social">
+              <li><a target="_blank" href="https://www.facebook.com/LuxzLab/"><i aria-hidden="true" class="fa fa-facebook"></i></a></li>
+              <li><a target="_blank" href="#"><i aria-hidden="true" class="fa fa-pinterest"></i></a></li>
+              <li><a target="_blank" href="#"><i aria-hidden="true" class="fa fa-linkedin"></i></a></li>
+              <li><a target="_blank" href="#"><i aria-hidden="true" class="fa fa-google-plus"></i></a></li>
+              <li><a target="_blank" href="#"><i aria-hidden="true" class="fa fa-twitter"></i></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <ul class="list-inline footer-menu">
+              <li><a href="http://www.luxzlab.com">Home</a></li>|
+              <li><a href="http://www.luxzlab.com/mczid/">MCZ ID Builder</a></li>|
+              <li><a href="http://www.luxzlab.com/contact/">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" async></script>
+          <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/1.6.6/fabric.min.js"></script>
+      <script type="text/javascript" src='./js/url-search-params.js'></script>
+      <script type="text/javascript" src="./js/fabric.curvedText.js"></script>
+      <script type="text/javascript" src="./js/jquery.simpleswitch.min.js"></script>
+      <script type="text/javascript" src="./js/jquery.minicolors.min.js"></script>
+      <script type="text/javascript" src='./js/powerange.js'></script>
+      <script type="text/javascript" src="./js/jquery.minimalect.min.js"></script>
+      <script type="text/javascript" src="./js/editor.min.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.debug.js"></script>
+      <script type="text/javascript" src="./js/jquery.magnific-popup.min.js"></script>
+      <script type="text/javascript" src="./js/jquery.mg-space.js"></script>
+      <!-- script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5887a4fa77fae35d"></script -->
+                    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.nicescroll/3.6.8-fix/jquery.nicescroll.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.1.0/sweetalert2.min.js" async></script>
+  </body>
+</html><script type="text/javascript">
+  $(document).ready( function() {
+    setTimeout(function (){
+      $('[data-toggle="popover"]').popover();
+    },3000);
+
+    $(".images-icon-wrapper, .font-list-wrapper, #logo_text, .minict_wrapper ul,.images-container").niceScroll({
+      cursorcolor: "#555",
+      touchbehavior: true,
+      cursordragontouch: true,
+      preventmultitouchscrolling: false,
+      enablemouselockapi: true
+    });
+
+    $(".checkbox-toggle").simpleSwitch();
+    $('#add_angels, #add_quotes, #add_icons').magnificPopup({
+      type: 'ajax'
+    });
+
+    $('.fore_color').minicolors({
+      control: 'hue',
+      defaultValue: '',
+      format: 'hex',
+      keywords: '',
+      inline: 'true',
+      letterCase: 'lowercase',
+      opacity: false,
+      position: 'bottom left',
+      swatches: [],
+      change: function(value, opacity) {
+        if( !value ) return;
+        $('#fcbox').css('background', value);
+        canvas.getActiveObject().setColor( value );
+        canvas.renderAll();
+      },
+      theme: 'bootstrap'
+    });
+
+    $('.back_color').minicolors({
+      control: 'hue',
+      defaultValue: '',
+      format: 'hex',
+      keywords: '',
+      inline: 'true',
+      letterCase: 'lowercase',
+      opacity: false,
+      position: 'bottom left',
+      swatches: [ 'rgba(0, 0, 0, 0.01)' ],
+      change: function(value, opacity) {
+        if( !value ) return;
+        // Make transparent background
+        if( opacity == undefined ) {
+          value = null;
+          $('#bkbox').css('background', 'url(../assets/images/tb.png)');
+        } else {
+          $('#bkbox').css('background', value);
+        }
+        canvas.setBackgroundColor(value, canvas.renderAll.bind(canvas));
+        canvas.renderAll();
+      },
+      theme: 'bootstrap'
+    });
+
+    $('#font_family').minimalect({
+      placeholder: 'Select category...'
+    });
+  });
+</script>
